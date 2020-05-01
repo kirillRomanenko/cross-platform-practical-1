@@ -1,0 +1,24 @@
+{
+    "name": "cross-platform-practical-1",
+    "version": "1.0.0",
+    "description": "",
+    "main": "app.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "electron ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/kirillRomanenko/cross-platform-practical-1.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/kirillRomanenko/cross-platform-practical-1/issues"
+    },
+    "homepage": "https://github.com/kirillRomanenko/cross-platform-practical-1#readme",
+    "devDependencies": {
+        "electron": "^8.2.5",
+        "electron-store": "^5.1.1"
+    }
+}
