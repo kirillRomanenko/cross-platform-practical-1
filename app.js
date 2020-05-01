@@ -1,7 +1,7 @@
 const { app, ipcMain, BrowserWindow } = require('electron');
 const electronStorage = require('./dataElectronStorage');
 
-const todosData = new DataStorage({ name: 'Todos Main' })
+const todosData = new electronStorage({ name: 'Todos Main' })
 function createGeneralWindow() {
     let window = new BrowserWindow({
         width: 800,
@@ -22,13 +22,14 @@ function createGeneralWindow() {
         if (!addTodoWindow) {
             // create a new add todo window
             addTodoWindow = new BrowserWindow({
-                width: 400,
-                height: 400,
+                width: 300,
+                height: 200,
                 parent: window,
                 webPreferences: {
                     nodeIntegration: true
                 }
             })
+            addTodoWindow.loadFile('./renderer/addTodo.html');
 
             // cleanup
             addTodoWindow.on('closed', () => {
