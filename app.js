@@ -1,4 +1,4 @@
-const { app, ipcMain, BrowserWindow } = require('electron');
+const { app, ipcMain, BrowserWindow, dialog } = require('electron');
 const electronStorage = require('./dataElectronStorage');
 const redisDb = require('./redisDb');
 
@@ -45,7 +45,10 @@ function createGeneralWindow() {
     ipcMain.on('show-todo-window', () => {
         const showTodos = todosData.getTodos().todos
         window.send('todos', showTodos)
-        redisDb.getTodo();
+        const path = dialog.showOpenDialogSync(window, {
+            properties: ['openDirectory']
+        })
+        redisDb.getTodo(path);
     })
 
     // add-todo from add todo window

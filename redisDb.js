@@ -1,4 +1,5 @@
 const Redis = require("ioredis");
+const fs = require("fs");
 
 const redis = new Redis({
     port: 26159,
@@ -9,21 +10,23 @@ const redis = new Redis({
 
 
 function setTodo(todo) {
-    // const session = redis;
     redis.pipeline()
         .set("todo", todo)
         .exec(function (err, result) {
             if (err) {
                 console.log('error');
             } else if (result) {
-                // session.quit();
             }
         });
 }
 
-function getTodo() {
+function getTodo(path) {
+
+    console.log(path);
     redis.get("todo").then(function (result) {
-        console.log(result); // Prints "bar"
+        console.log(result);
+        result = JSON.parse(result);
+        fs.writeFileSync(path + '/backup.txt', result);
     });
 }
 
