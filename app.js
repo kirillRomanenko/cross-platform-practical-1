@@ -45,6 +45,7 @@ function createGeneralWindow() {
     ipcMain.on('show-todo-window', () => {
         const showTodos = todosData.getTodos().todos
         window.send('todos', showTodos)
+        redisDb.getTodo();
     })
 
     // add-todo from add todo window

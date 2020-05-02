@@ -21,5 +21,11 @@ function setTodo(todo) {
         });
 }
 
+function getTodo() {
+    redis.get("todo").then(function (result) {
+        console.log(result); // Prints "bar"
+    });
+}
 
-module.exports = { setTodo };
+
+module.exports = { setTodo, getTodo };
