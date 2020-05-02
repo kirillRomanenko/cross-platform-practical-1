@@ -5,7 +5,8 @@
     "main": "app.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "electron ."
+        "start": "electron .",
+        "build": "electron-packager ./ --all"
     },
     "repository": {
         "type": "git",
@@ -19,6 +20,9 @@
     "homepage": "https://github.com/kirillRomanenko/cross-platform-practical-1#readme",
     "devDependencies": {
         "electron": "^8.2.5",
+        "electron-packager": "^14.2.1"
+    },
+    "dependencies": {
         "electron-store": "^5.1.1",
         "ioredis": "^4.16.3",
         "spectre.css": "^0.5.8"
