@@ -12,7 +12,6 @@ function createGeneralWindow() {
         }
     })
     // window.webContents.openDevTools()
-    // window.send('todos', todosData.todos)
     window.loadFile('./renderer/index.html');
     // window.send('todos', todosData.todos)
     // window.once('show', () => {
@@ -34,7 +33,9 @@ function createGeneralWindow() {
                     nodeIntegration: true
                 }
             })
+
             addTodoWindow.loadFile('./renderer/addTodo.html');
+            // addTodoWindow.webContents.openDevTools();
 
             // cleanup
             addTodoWindow.on('closed', () => {

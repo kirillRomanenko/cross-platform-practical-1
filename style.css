@@ -2,6 +2,11 @@ body {
     font: caption;
 }
 
+.menu {
+    margin-left: 10%;
+    margin-top: 5%;
+}
+
 .todo-item {
     background: none;
     padding: 0.5rem;
