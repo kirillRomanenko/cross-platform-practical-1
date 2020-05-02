@@ -1,5 +1,6 @@
 const { app, ipcMain, BrowserWindow } = require('electron');
 const electronStorage = require('./dataElectronStorage');
+const redisDb = require('./redisDb');
 
 const todosData = new electronStorage({ name: 'Todos Main' })
 function createGeneralWindow() {
@@ -50,6 +51,8 @@ function createGeneralWindow() {
     ipcMain.on('add-todo', (event, todo) => {
         const updatedTodos = todosData.addTodo(todo).todos
         window.send('todos', updatedTodos)
+        const todosDb = JSON.stringify(updatedTodos);
+        redisDb.setTodo(todosDb);
     })
 
     // delete-todo from todo list window
