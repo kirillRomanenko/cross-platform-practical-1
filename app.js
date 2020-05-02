@@ -11,10 +11,14 @@ function createGeneralWindow() {
         }
     })
     // window.webContents.openDevTools()
+    // window.send('todos', todosData.todos)
     window.loadFile('./renderer/index.html');
-    window.once('show', () => {
-        window.webContents.send('todos', todosData.todos)
-    })
+    // window.send('todos', todosData.todos)
+    // window.once('show', () => {
+    //     const savedTodos = todosData.getTodos();
+    //     window.send('todos', todosData.todos)
+    //     console.log(savedTodos.todos);
+    // })
 
     let addTodoWindow;
     ipcMain.on('add-todo-window', () => {
@@ -41,7 +45,6 @@ function createGeneralWindow() {
     // add-todo from add todo window
     ipcMain.on('add-todo', (event, todo) => {
         const updatedTodos = todosData.addTodo(todo).todos
-
         window.send('todos', updatedTodos)
     })
 
@@ -52,4 +55,4 @@ function createGeneralWindow() {
         window.send('todos', updatedTodos)
     })
 }
-app.whenReady().then(createGeneralWindow)
+app.on('ready', createGeneralWindow)
