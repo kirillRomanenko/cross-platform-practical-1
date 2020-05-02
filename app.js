@@ -41,6 +41,10 @@ function createGeneralWindow() {
             })
         }
     })
+    ipcMain.on('show-todo-window', () => {
+        const showTodos = todosData.getTodos().todos
+        window.send('todos', showTodos)
+    })
 
     // add-todo from add todo window
     ipcMain.on('add-todo', (event, todo) => {

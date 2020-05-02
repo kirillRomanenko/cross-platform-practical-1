@@ -9,6 +9,10 @@ const deleteTodo = (e) => {
 document.getElementById('createTodoBtn').addEventListener('click', () => {
     ipcRenderer.send('add-todo-window')
 })
+// show todo window button
+document.getElementById('showTodoBtn').addEventListener('click', () => {
+    ipcRenderer.send('show-todo-window')
+})
 
 // on receive todos
 ipcRenderer.on('todos', (event, todos) => {
