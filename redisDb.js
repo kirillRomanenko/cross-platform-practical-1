@@ -2,10 +2,10 @@ const Redis = require("ioredis");
 const fs = require("fs");
 
 const redis = new Redis({
-    port: 26159,
-    host: "ec2-52-210-252-3.eu-west-1.compute.amazonaws.com",
+    port: 11319,
+    host: "ec2-52-19-54-53.eu-west-1.compute.amazonaws.com",
     family: 4,
-    password: "p63450378da29a838cc108262bdc671416ba6a09cfdcc2364c57e883f80d86e9c",
+    password: "paf5e24b7d7f9fa32fb7a14db41369aeac16361ff4a6762c8f9289e6cdd7810ce",
 });
 
 
