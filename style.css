@@ -1,5 +1,18 @@
-body {
-    font: caption;
+@font-face {
+    font-family: "Poppins-ExtraLight";
+  
+    src: url("./fonts/Poppins-ExtraLight.ttf") format("truetype"), /* Safari, Android, iOS */
+      url("./fonts/Poppins-ExtraLight.woff") format("woff"), /* Modern Browsers */
+      url("./fonts/Poppins-ExtraLight.woff2") format("woff2"); /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+/* body {
+    font: 'Poppins-ExtraLight';
+} */
+button, ul{
+    font-family: 'Poppins-ExtraLight';
 }
 
 .menu {
