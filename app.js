@@ -13,12 +13,6 @@ function createGeneralWindow() {
     })
     // window.webContents.openDevTools()
     window.loadFile('./renderer/index.html');
-    // window.send('todos', todosData.todos)
-    // window.once('show', () => {
-    //     const savedTodos = todosData.getTodos();
-    //     window.send('todos', todosData.todos)
-    //     console.log(savedTodos.todos);
-    // })
 
     let addTodoWindow;
     ipcMain.on('add-todo-window', () => {
